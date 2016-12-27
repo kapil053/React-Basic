@@ -65,8 +65,9 @@ export default class UserList extends React.Component {
         return (
             <div>
                 <table>
+                    <tbody>
                     {list.map((list,index) => {
-                        return <tr index={index}>
+                        return <tr key={index}>
                             <td>{list._id}</td>
                             <td>{list.isActive}</td>
                             <td>{list.age}</td>
@@ -75,6 +76,7 @@ export default class UserList extends React.Component {
                             <td>{list.email}</td>
                             </tr>
                     })}
+                    </tbody>
                 </table>
             </div>
         )
