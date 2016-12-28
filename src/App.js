@@ -23,7 +23,7 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <h2>{hello}</h2>
+        <h2>{hello} {this.props.company}</h2>
         <span>{this.state.count}</span>
         <button onClick={this.add.bind(this)}>click</button>
         <ul>
@@ -50,7 +50,7 @@ class Student {
     }
 
     printDetails() {
-        return "Hi my name is " + this.name + " and roll number is " + this.rollNumber
+        return `Hi my name is  ${this.name}  and roll number is  ${this.rollNumber}`
     }
 }
 
@@ -60,8 +60,14 @@ let Mayur = new Student("Mayur",2);
 console.log(Kapil.display)
 console.log(Mayur.display)
 
+App.defaultProps = {
+    company : "To The New"
+}
 
 
+App.propTypes = {
+    company : React.PropTypes.string.isRequired
+}
 
 
 
