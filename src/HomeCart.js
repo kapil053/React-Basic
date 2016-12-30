@@ -31,16 +31,13 @@ export default class HomeCart extends React.Component {
         })
     }
 
-    increment(one,two,three) {
-        alert(0)
-        console.log(one)
-        console.log(two)
-        console.log(three)
-        //let state = this.state.items;
+    increment(i) {
+        console.log(i)
+        let state = this.state.items;
         //this.setState({
-        //    items : state[index].qty + 1
+        //    items : state[i].qty + 1
         //})
-        //console.log(this.props.items)
+        //console.log(state)
     }
 
     render() {
@@ -69,7 +66,7 @@ class Item extends React.Component {
                             <td>{item.qty} ***</td>
                             <td>{item.price} ***</td>
                             <td><span>(-)***</span></td>
-                            <td><span onClick={this.props.increment}>(+)***</span></td>
+                            <td><span onClick={() => {this.props.increment(i)}}>(+)***</span></td>
                             <td><span>(x)</span></td>
                         </tr>
                     })}
