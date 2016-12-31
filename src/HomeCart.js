@@ -32,12 +32,27 @@ export default class HomeCart extends React.Component {
     }
 
     increment(i) {
-        console.log(i)
         let state = this.state.items;
-        //this.setState({
-        //    items : state[i].qty + 1
-        //})
-        //console.log(state)
+        state[i].qty += 1
+        this.setState({
+            items : state
+        })
+    }
+    decrement(i) {
+        let state = this.state.items;
+        if(state[i].qty >= 2){
+            state[i].qty -= 1
+            this.setState({
+                items : state
+            })
+        }
+    }
+    removeItem(i) {
+        let state = this.state.items;
+        state.splice(i,1)
+        this.setState({
+            items : state
+        })
     }
 
     render() {
@@ -46,7 +61,7 @@ export default class HomeCart extends React.Component {
                 <input type="text" placeholder="Enter item with price (hyphen seperated)" value={this.state.input}
                        onChange={e => this.setState({input:e.target.value})}/>
                 <input type="button" value="add cart" onClick={this.addToCart.bind(this)}/>
-                <Item items={this.state.items} increment={this.increment.bind(this)}/>
+                <Item items={this.state.items} removeItem={this.removeItem.bind(this)} decrement={this.decrement.bind(this)} increment={this.increment.bind(this)} />
                 <CartTotal items={this.state.items}/>
             </div>
         )
@@ -65,9 +80,9 @@ class Item extends React.Component {
                             <td>{item.name} ***</td>
                             <td>{item.qty} ***</td>
                             <td>{item.price} ***</td>
-                            <td><span>(-)***</span></td>
+                                <td><span onClick={() => {this.props.decrement(i)}}>(-)***</span></td>
                             <td><span onClick={() => {this.props.increment(i)}}>(+)***</span></td>
-                            <td><span>(x)</span></td>
+                            <td><span onClick={() => {this.props.removeItem(i)}}>(x)</span></td>
                         </tr>
                     })}
                     </tbody>
