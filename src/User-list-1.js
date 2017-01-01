@@ -90,6 +90,18 @@ class Users extends React.Component {
     }
 }
 
+Users.propTypes = {
+    user : React.PropTypes.shape({
+        _id : React.PropTypes.string.isRequired,
+        isActive : React.PropTypes.bool.isRequired,
+        age : React.PropTypes.number.isRequired,
+        name : React.PropTypes.string.isRequired,
+        gender : React.PropTypes.string.isRequired,
+        email : React.PropTypes.string.isRequired
+    })
+
+}
+
 
 
 

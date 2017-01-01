@@ -4,8 +4,8 @@
 import React from 'react'
 
 export default class Header extends React.Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             isUserLoggedIn : false
         }
@@ -18,7 +18,7 @@ export default class Header extends React.Component {
     }
 
     render(){
-        let display = this.state.isUserLoggedIn ? <p>Kapil</p> : <button onClick={this.login.bind(this)}>Login</button>
+        const display = this.state.isUserLoggedIn ? <p>Kapil</p> : <button onClick={this.login.bind(this)}>Login</button>
         return (
             <div>{display}</div>
         )

@@ -5,14 +5,14 @@ import {render} from 'react-dom';
 //import WaterRandom from './Water-random'
 //import UserDetail from './UserDetail'
 //import Cart from './Cart'
-import StopWatch from './StopWatch'
+//import StopWatch from './StopWatch'
 //import Form from './Form'
 //import App from './App'
 //import StateLifeCycle from './StateLifeCycle'
 //import Header from './Header-login'
 //import UserList from './User-list'
 //import BasicPage from './BasicPage'
-//import UserList1 from './User-list-1'
+import UserList1 from './User-list-1'
 
 let app = document.getElementById('main')
 
@@ -30,10 +30,10 @@ const user = [
 //render(<WaterRandom />, app)
 //render(<UserDetail list={user} />, app)
 //render(<Cart />, app)
-render(<StopWatch />, app)
+//render(<StopWatch />, app)
 //render(<Form />, app)
 //render(<StateLifeCycle />, app)
 //render(<Header />, app)
 //render(<UserList />, app)
 //render(<BasicPage />, app)
-//render(<UserList1 />, app)
+render(<UserList1 />, app)
