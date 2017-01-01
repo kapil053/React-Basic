@@ -7,9 +7,7 @@ import UserList from './User-list'
 export default class BasicPageBody extends React.Component {
     render(){
         return (
-            <div>
                 <UserList />
-            </div>
         )
     }
 }

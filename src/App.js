@@ -10,13 +10,13 @@ export default class App extends React.Component {
       count : 0
     }
   }
-  add(){
+  increment(){
     this.setState({
       count : this.state.count + 1
     })
   }
   render() {
-    let userList = ["kapil","Mayur","Modi"];
+    const userList = ["kapil","Mayur","Modi"];
 
     //Create a simple component called HelloWorld. This component only renders "Hello World" on the screen
     let hello = "Hello world";
@@ -25,7 +25,7 @@ export default class App extends React.Component {
       <div>
         <h2>{hello}</h2>
         <span>{this.state.count}</span>
-        <button onClick={this.add.bind(this)}>click</button>
+        <button onClick={this.increment.bind(this)}>click</button>
         <ul>
           {userList.map((user,i) => {
             return <li key={i}>{user}</li>
@@ -50,7 +50,7 @@ class Student {
     }
 
     printDetails() {
-        return "Hi my name is " + this.name + " and roll number is " + this.rollNumber
+        return `Hi my name is ${this.name} and roll number is ${this.rollNumber}`
     }
 }
 

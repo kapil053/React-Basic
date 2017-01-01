@@ -66,9 +66,7 @@ export default class UserList1 extends React.Component {
         return (
             <table>
                 <tbody>
-                {list.map((user, index) => {
-                    return <Users user={user} key={index}></Users>
-                })}
+                {list.map((user, index) => <Users user={user} key={index}></Users>)}
                 </tbody>
             </table>
         )
