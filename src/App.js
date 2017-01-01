@@ -1,6 +1,3 @@
-/**
- * Created by ttnd on 27/12/16.
- */
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
 
