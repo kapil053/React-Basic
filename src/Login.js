@@ -5,8 +5,8 @@ import React from 'react'
 import {browserHistory} from 'react-router'
 
 export default class Login extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             name: 'admin',
             password: 'admin'

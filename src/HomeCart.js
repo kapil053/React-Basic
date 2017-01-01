@@ -103,3 +103,11 @@ class CartTotal extends React.Component {
     }
 }
 
+Item.propTypes = {
+    items : React.PropTypes.arrayOf(React.PropTypes.shape({
+        name : React.PropTypes.string.isRequired,
+        qty : React.PropTypes.number.isRequired,
+        price : React.PropTypes.number.isRequired
+    }))
+}
+
