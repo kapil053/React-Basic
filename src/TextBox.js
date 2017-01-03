@@ -24,12 +24,7 @@ export default class TextBox extends React.Component {
             fontSize : this.state.fontSize,
             color : this.state.color
         }
-        let tweetButton;
-        if(this.state.count > 25){
-            tweetButton = <input type="submit" disabled value="Tweet" />
-        } else {
-            tweetButton = <input type="submit" value="Tweet" />
-        }
+        let isDisabled = (this.state.count > 25) || (this.state.count === 0) ? true:false
         return (
             <div>
                 <div><label>color : </label><input type="text" onChange={(e) => {this.setState({color:e.target.value})}} /></div>
@@ -39,10 +34,9 @@ export default class TextBox extends React.Component {
                     <textarea onChange={this.textChange.bind(this)} name="tweetMsg" id="" cols="30" rows="10" value={this.state.textArea}></textarea>
                     <div className="action">
                         <span class="count">{this.state.count}</span>
-                        {tweetButton}
+                        <input type="submit" disabled={isDisabled} value="Tweet" />
                     </div>
                 </div>
-                <ScrollTop background="blue" name="arrow-up" />
             </div>
         )
     }

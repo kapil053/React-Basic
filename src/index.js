@@ -2,11 +2,12 @@
 import React from 'react'
 import {render} from 'react-dom';
 //import App from './App'
-//import TextBox from './TextBox'
-import ScrollPage from './ScrollPage'
+import TextBox from './TextBox'
+//import ScrollPage from './ScrollPage'
 
 let app = document.getElementById('main')
 
 
 //render(<App />, app)
-render(<ScrollPage />, app)
+render(<TextBox />, app)
+//render(<ScrollPage />, app)

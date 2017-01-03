@@ -31,6 +31,10 @@ export default class ScrollTop extends React.Component {
         window.addEventListener('scroll',this.scrollHandle.bind(this))
     }
 
+    componentWillUnmount(){
+        window.removeEventListener('scroll',this.scrollHandle.bind(this))
+    }
+
     render() {
         let {position, backgroundColor} = this.props;
         const style = {
